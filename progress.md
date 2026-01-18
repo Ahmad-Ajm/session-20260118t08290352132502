@@ -14,9 +14,9 @@
 
 | FeatureId | FeatureName | FeatureType | Summary | Personas | SpecFolders | Priority | Status |
 |---|---|---|---|---|---|---|---|
-| FEAT-001-UXUI | UX/UI Baseline (Shell) | CRUD | هيكل واجهة أساسي (Layout + Routing + صفحات Placeholder) بدون منطق معقد | User, Admin | psec-kit-file/FEAT-001-UXUI | P0 | Planned |
-| FEAT-USER-REGISTRATION | User Registration & Auth | Security | تسجيل/تسجيل دخول/خروج + جلسة + حراسة مسارات | User | psec-kit-file/FEAT-USER-REGISTRATION | P0 | In-Progress |
-| FEAT-CV-CREATION | CV Creation | CRUD | إنشاء/تعديل/معاينة السيرة الذاتية مع أقسام التعليم/الخبرات/المهارات | User | psec-kit-file/FEAT-CV-CREATION | P0 | In-Progress |
+| FEAT-001-UXUI | UX/UI Baseline (Shell) | CRUD | هيكل واجهة أساسي (Layout + Routing + صفحات Placeholder) بدون منطق معقد | User, Admin | psec-kit-file/FEAT-001-UXUI | P0 | Not-Start |
+| FEAT-USER-REGISTRATION | User Registration & Auth | Security | تسجيل/تسجيل دخول/خروج + جلسة + حراسة مسارات | User | psec-kit-file/FEAT-USER-REGISTRATION | P0 | Not-Start |
+| FEAT-CV-CREATION | CV Creation | CRUD | إنشاء/تعديل/معاينة السيرة الذاتية مع أقسام التعليم/الخبرات/المهارات | User | psec-kit-file/FEAT-CV-CREATION | P0 | Not-Start |
 
 ---
 
