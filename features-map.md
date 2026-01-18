@@ -81,9 +81,11 @@
 > 👇 النموذج التالي يحتوي صفًا واحدًا **مثالًا فقط**.
 > عدّل القيم أو انسخ الصف وأضف صفوفًا جديدة لكل ميزة.
 
-| FeatureId      | FeatureName        | FeatureType | Summary                                      | Personas         | Requirements      | SpecFolders                             | Priority | Status      |
-|----------------|--------------------|-------------|----------------------------------------------|------------------|-------------------|------------------------------------------|----------|------------|
-| FEAT-EXAMPLE01 | Example Feature    | CRUD        | مثال لميزة CRUD كاملة (إنشاء/عرض/تعديل/حذف) | Admin, User      | FR-EX-01, FR-EX-02 | 04-domain, 07-api, 08-ui                | P1       | Planned    |
+| FeatureId              | FeatureName                 | FeatureType | Summary                                           | Personas     | Requirements | SpecFolders                               | Priority | Status    |
+|-----------------------|-----------------------------|-------------|---------------------------------------------------|--------------|--------------|-------------------------------------------|----------|----------|
+| FEAT-001              | UX/UI (Baseline/System)     | Workflow    | أساسيات واجهة المستخدم ونظام التصميم والتنقل العام | User, Visitor |              | 08-ui                                     | P0       | Not-Start |
+| FEAT-CV-CREATION      | إنشاء السيرة الذاتية        | CRUD        | إدخال/تعديل بيانات CV وإنشاء CV من البيانات       | User         |              | 04-domain, 07-api, 08-ui                  | P0       | Not-Start |
+| FEAT-USER-REGISTRATION| تسجيل المستخدمين            | Security    | تسجيل/دخول المستخدمين لتمكين إنشاء/تعديل CV       | User         |              | 07-api, 08-ui, 09-security                | P0       | Not-Start |
 
 أضف الصفوف الحقيقية هنا أسفل المثال ↑.
 
@@ -163,3 +165,75 @@
 
 بعد هذا المثال، ابدأ بإضافة سكاشن حقيقية لكل Feature في مشروعك بنفس القالب.
 يمكنك ترتيبها حسب الأولوية أو حسب الدومين (Auth, Users, Search, Reporting, AI, Integration, ...).
+
+
+### FEAT-001 – UX/UI (Baseline/System)
+**Type:** Workflow  
+**Summary:** وضع أساسيات تجربة المستخدم: تصميم موحّد، تخطيط صفحات أساسي، وتنقل عام لدعم إنشاء/عرض السيرة الذاتية.  
+**Personas:** User, Visitor  
+**Requirements:**  
+**Spec Folders / Files:**  
+- `specifications/08-ui/`
+
+**Dependencies / Relations:**  
+- تعتمد على:  
+- تؤثر على: FEAT-CV-CREATION, FEAT-USER-REGISTRATION
+
+**KPI Template:**  
+- `specifications/12-testing/kpi-workflow-template.md`
+
+**Recommended Feature Prompt (Cursor):**  
+- `cursor_prompt_feature-workflow.txt`
+
+**Notes / Open Questions:**  
+- منصة التطبيق المستهدفة (ويب/موبايل/كلاهما) غير محددة بعد.
+- اللغات المطلوبة (عربي فقط أم متعدد اللغات).
+
+
+### FEAT-CV-CREATION – إنشاء السيرة الذاتية
+**Type:** CRUD  
+**Summary:** تمكين المستخدم المسجّل من إدخال بيانات CV (الاسم، الموبايل، الصورة، الخبرات، التعليم) وتوليد CV قابلة للعرض.  
+**Personas:** User  
+**Requirements:**  
+**Spec Folders / Files:**  
+- `specifications/04-domain/`
+- `specifications/07-api/`
+- `specifications/08-ui/`
+
+**Dependencies / Relations:**  
+- تعتمد على: FEAT-USER-REGISTRATION, FEAT-001
+- تؤثر على: 
+
+**KPI Template:**  
+- `specifications/12-testing/kpi-crud-template.md`
+
+**Recommended Feature Prompt (Cursor):**  
+- `cursor_prompt_feature-crud.txt`
+
+**Notes / Open Questions:**  
+- هل يسمح للمستخدم بأكثر من CV أم CV واحد لكل حساب؟
+- تفاصيل رفع/تخزين الصورة (الحجم/النوع/مكان التخزين).
+
+
+### FEAT-USER-REGISTRATION – تسجيل المستخدمين
+**Type:** Security  
+**Summary:** تسجيل/تسجيل دخول المستخدمين لتمكين إنشاء وتعديل سيرتهم الذاتية وربط CV بحساب.  
+**Personas:** User  
+**Requirements:**  
+**Spec Folders / Files:**  
+- `specifications/07-api/`
+- `specifications/08-ui/`
+- `specifications/09-security/`
+
+**Dependencies / Relations:**  
+- تعتمد على: FEAT-001
+- تؤثر على: FEAT-CV-CREATION
+
+**KPI Template:**  
+- `specifications/12-testing/kpi-security-template.md`
+
+**Recommended Feature Prompt (Cursor):**  
+- `cursor_prompt_feature-security.txt`
+
+**Notes / Open Questions:**  
+- طريقة تسجيل المستخدمين وحقول الحساب (بريد/هاتف/كلمة مرور….) غير محددة بعد.
